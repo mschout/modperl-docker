@@ -1,0 +1,235 @@
+diff -uNr httpd-2.0.53/srclib/apr/build/libtool.m4 httpd-2.0.53.freebsd/srclib/apr/build/libtool.m4
+--- httpd-2.0.53/srclib/apr/build/libtool.m4	2005-02-07 11:23:17.000000000 -0600
++++ httpd-2.0.53.freebsd/srclib/apr/build/libtool.m4	2016-07-07 15:37:22.561817261 -0500
+@@ -1298,10 +1298,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+@@ -5493,10 +5489,6 @@
+       _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
+       ;;
+ 
+-    freebsd1*)
+-      _LT_AC_TAGVAR(ld_shlibs, $1)=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+diff -uNr httpd-2.0.53/srclib/apr/configure httpd-2.0.53.freebsd/srclib/apr/configure
+--- httpd-2.0.53/srclib/apr/configure	2005-02-07 11:23:25.000000000 -0600
++++ httpd-2.0.53.freebsd/srclib/apr/configure	2016-07-07 15:38:53.314936163 -0500
+@@ -11509,10 +11509,6 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
+-      ld_shlibs=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+@@ -12096,10 +12092,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+@@ -15812,10 +15804,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+@@ -18385,10 +18373,6 @@
+       hardcode_shlibpath_var_F77=no
+       ;;
+ 
+-    freebsd1*)
+-      ld_shlibs_F77=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+@@ -18972,10 +18956,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+@@ -20747,10 +20727,6 @@
+       hardcode_shlibpath_var_GCJ=no
+       ;;
+ 
+-    freebsd1*)
+-      ld_shlibs_GCJ=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+@@ -21334,10 +21310,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+diff -uNr httpd-2.0.53/srclib/apr-util/xml/expat/aclocal.m4 httpd-2.0.53.freebsd/srclib/apr-util/xml/expat/aclocal.m4
+--- httpd-2.0.53/srclib/apr-util/xml/expat/aclocal.m4	2005-02-07 11:23:32.000000000 -0600
++++ httpd-2.0.53.freebsd/srclib/apr-util/xml/expat/aclocal.m4	2016-07-07 15:38:16.982836972 -0500
+@@ -1300,10 +1300,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+@@ -5495,10 +5491,6 @@
+       _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
+       ;;
+ 
+-    freebsd1*)
+-      _LT_AC_TAGVAR(ld_shlibs, $1)=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+diff -uNr httpd-2.0.53/srclib/apr-util/xml/expat/configure httpd-2.0.53.freebsd/srclib/apr-util/xml/expat/configure
+--- httpd-2.0.53/srclib/apr-util/xml/expat/configure	2005-02-07 11:23:36.000000000 -0600
++++ httpd-2.0.53.freebsd/srclib/apr-util/xml/expat/configure	2016-07-07 15:38:47.750866428 -0500
+@@ -6765,10 +6765,6 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
+-      ld_shlibs=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+@@ -7352,10 +7348,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+@@ -11068,10 +11060,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+@@ -13641,10 +13629,6 @@
+       hardcode_shlibpath_var_F77=no
+       ;;
+ 
+-    freebsd1*)
+-      ld_shlibs_F77=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+@@ -14228,10 +14212,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+@@ -16003,10 +15983,6 @@
+       hardcode_shlibpath_var_GCJ=no
+       ;;
+ 
+-    freebsd1*)
+-      ld_shlibs_GCJ=no
+-      ;;
+-
+     # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+     # support.  Future versions do this automatically, but an explicit c++rt0.o
+     # does not break anything, and helps significantly (at the cost of a little
+@@ -16590,10 +16566,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ kfreebsd*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+diff -uNr httpd-2.0.53/srclib/pcre/ltconfig httpd-2.0.53.freebsd/srclib/pcre/ltconfig
+--- httpd-2.0.53/srclib/pcre/ltconfig	2004-11-24 13:31:09.000000000 -0600
++++ httpd-2.0.53.freebsd/srclib/pcre/ltconfig	2016-07-07 15:37:37.449816434 -0500
+@@ -1330,10 +1330,6 @@
+     fix_srcfile_path='`cygpath -w $srcfile`'
+     ;;
+ 
+-  freebsd1*)
+-    ld_shlibs=no
+-    ;;
+-
+   # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+   # support.  Future versions do this automatically, but an explicit c++rt0.o
+   # does not break anything, and helps significantly (at the cost of a little
+@@ -1864,10 +1860,6 @@
+   lt_cv_dlopen_libs=
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-  
+ freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+   version_type=freebsd-$objformat

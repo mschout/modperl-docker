@@ -1,0 +1,11 @@
+--- a/srclib/apr/include/apr.h.in	2013-08-03 12:27:18.000000000 -0500
++++ b/srclib/apr/include/apr.h.in	2013-08-03 12:27:27.000000000 -0500
+@@ -207,7 +207,7 @@
+ /*  APR Feature Macros */
+ #define APR_HAS_SHARED_MEMORY     @sharedmem@
+ #define APR_HAS_THREADS           @threads@
+-#define APR_HAS_SENDFILE          @sendfile@
++#define APR_HAS_SENDFILE          0
+ #define APR_HAS_MMAP              @mmap@
+ #define APR_HAS_FORK              @fork@
+ #define APR_HAS_RANDOM            @rand@
