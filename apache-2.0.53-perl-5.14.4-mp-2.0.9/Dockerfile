@@ -6,16 +6,23 @@ RUN useradd -m -s /bin/bash http \
   && mkdir /app \
   && chown http:http app
 
+RUN apt-get update && apt-get install -y \
+    curl \
+    file \
+    libpcre3 \
+    libexpat1 \
+    make \
+    netbase \
+  && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+
 FROM base-image AS modperl-build
 
 # Install perl
 RUN apt-get update && apt-get install -y \
     build-essential \
-    curl \
-    file \
     libexpat1-dev \
     libssl-dev \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
 COPY patches/perl/*.patch /usr/src/perl/
 WORKDIR /usr/src/perl
@@ -77,17 +84,6 @@ RUN cpanm -q --skip-satisfied --notest Test::More~0.94 \
 # final image, copy perl and apache builds into it
 FROM base-image
 
-# Install perl
-# Note: could probably trim down image size by not including build-essential,
-# but we need a lot of what that provides and I haven't figured out the best
-# min package set yet
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    libexpat1 \
-  && rm -rf /var/lib/apt/lists/*
-
 COPY --from=modperl-build /usr/local /usr/local
 
-USER http
 WORKDIR /app
