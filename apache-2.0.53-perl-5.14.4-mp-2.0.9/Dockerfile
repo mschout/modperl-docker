@@ -86,4 +86,6 @@ FROM base-image
 
 COPY --from=modperl-build /usr/local /usr/local
 
+RUN ldconfig
+
 WORKDIR /app
