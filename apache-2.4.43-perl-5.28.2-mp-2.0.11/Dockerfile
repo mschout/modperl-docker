@@ -55,7 +55,7 @@ RUN NPROC=$(nproc) \
 # Install APR
 WORKDIR /usr/src/apr
 RUN NPROC=$(nproc) \
-    && curl -SL http://mirrors.advancedhosters.com/apache/apr/apr-1.7.0.tar.gz -o apr-1.7.0.tar.gz \
+    && curl -SL http://archive.apache.org/dist/apr/apr-1.7.0.tar.gz -o apr-1.7.0.tar.gz \
     && tar --strip-components=1 -xaf apr-1.7.0.tar.gz -C /usr/src/apr \
     && rm -rf apr-1.7.0.tar.gz \
     && ./configure --prefix=/usr/local \
@@ -67,7 +67,7 @@ RUN NPROC=$(nproc) \
 # Install apr-util
 WORKDIR /usr/src/apr-util
 RUN NPROC=$(nproc) \
-    && curl -SL http://mirrors.advancedhosters.com/apache/apr/apr-util-1.6.1.tar.gz -o apr-util-1.6.1.tar.gz \
+    && curl -SL http://archive.apache.org/dist/apr/apr-util-1.6.1.tar.gz -o apr-util-1.6.1.tar.gz \
     && tar --strip-components=1 -xaf apr-util-1.6.1.tar.gz -C /usr/src/apr-util \
     && rm -rf apr-util-1.6.1.tar.gz \
     && ./configure --prefix=/usr/local --with-apr=/usr/local/bin/apr-1-config \
@@ -79,7 +79,7 @@ RUN NPROC=$(nproc) \
 # Install apache
 WORKDIR /usr/src/apache
 RUN NPROC=$(nproc) \
-    && curl -SL http://mirrors.advancedhosters.com/apache/httpd/httpd-${APACHE_VERSION}.tar.bz2 -o httpd-${APACHE_VERSION}.tar.bz2 \
+    && curl -SL http://archive.apache.org/dist/httpd/httpd-${APACHE_VERSION}.tar.bz2 -o httpd-${APACHE_VERSION}.tar.bz2 \
     && tar --strip-components=1 -xaf httpd-${APACHE_VERSION}.tar.bz2 -C /usr/src/apache \
     && ./configure \
         --with-apr=/usr/local/bin/apr-1-config \
@@ -96,7 +96,7 @@ RUN NPROC=$(nproc) \
 # Install mod_perl
 WORKDIR /usr/src/modperl
 RUN NPROC=$(nproc) \
-    && curl -SL http://mirrors.advancedhosters.com/apache/perl/mod_perl-${MOD_PERL_VERSION}.tar.gz -o mod_perl-${MOD_PERL_VERSION}.tar.gz \
+    && curl -SL http://archive.apache.org/dist/perl/mod_perl-${MOD_PERL_VERSION}.tar.gz -o mod_perl-${MOD_PERL_VERSION}.tar.gz \
     && tar --strip-components=1 -xaf mod_perl-${MOD_PERL_VERSION}.tar.gz -C /usr/src/modperl \
     && perl Makefile.PL \
         MP_APR_CONFIG=/usr/local/bin/apr-1-config \
