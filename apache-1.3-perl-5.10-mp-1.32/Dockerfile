@@ -101,6 +101,7 @@ RUN cpanm -q --skip-satisfied --notest Test::More@0.94 \
   && cpanm -q --skip-satisfied --notest URI@1.30 \
   && cpanm -q --skip-satisfied --notest LWP::UserAgent@2.033 \
   && cpanm -q --skip-satisfied --notest Apache::Test@1.28 \
+  && cpanm -q --skip-satisfied --notest Params::Util@1.07 \
   && rm -rf $HOME/.cpanm \
   && rm -f /usr/local/bin/bin/head
 

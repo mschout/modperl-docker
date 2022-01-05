@@ -105,6 +105,7 @@ RUN NPROC=$(nproc) \
 
 # install CPAN deps
 RUN cpanm -q --skip-satisfied --notest Test::More URI LWP::UserAgent Apache::Test \
+  && cpanm -q --skip-satisfied --notest Params::Util \
   && rm -rf $HOME/.cpanm \
   && rm -f /usr/local/bin/head
 
